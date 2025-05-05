@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Research Paper Downloads</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            margin: 20px;
+            background-color: #f4f4f4;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        .table-container {
+            overflow-x: auto; /* Enable horizontal scrolling for small screens */
+            background-color: #fff;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th, td {
+            padding: 12px 15px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+
+        th {
+            background-color: #007bff;
+            color: white;
+        }
+
+        tr:hover {
+            background-color: #f5f5f5;
+        }
+
+        td a {
+            text-decoration: none;
+            color: #007bff;
+            font-weight: bold;
+            display: block; /* Make the entire cell clickable */
+        }
+
+        td a:hover {
+            color: #0056b3;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 600px) {
+            th, td {
+                padding: 8px 10px;
+                font-size: 0.9em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>Research Paper Downloads</h1>
+    <div class="table-container">
+        <table>
+            <thead>
+                <tr>
+                    <th>Topic Name</th>
+                    <th>Student Name</th>
+                </tr>
+            </thead>
+            <tbody id="paperTableBody">
+                </tbody>
+        </table>
+    </div>
+
+    <script>
+        const papers = [
+            { topic: "Novel Pattern Recognition", student: "Aamir" },
+            { topic: "Sensories Motor Control", student: "Aazan" },
+            { topic: "A review on recent trends", student: "Absar" },
+            { topic: "Versatile Adhesive Skin", student: "Agha" },
+            { topic: "Mechanoreseptor", student: "Ahsan" },
+            { topic: "Co Learning & Hybrid Teams", student: "Ali Haider" },
+            { topic: "Machine Learning for Robotic", student: "Anika" },
+            { topic: "Hand like gripper", student: "Aneel" },
+            { topic: "Cause Effect Perception", student: "Arfa" },
+            { topic: "Advanced Spot Robot", student: "Arqum" },
+            { topic: "Improving Work zone safety", student: "Atif" },
+            { topic: "Tangible LLMs", student: "Azeem" },
+            { topic: "On the ethical governance", student: "Babar" },
+            { topic: "Learning controllers", student: "Balach" },
+            { topic: "Re-enforcement learning", student: "CR" },
+            { topic: "Sensor fusion", student: "Delip" },
+            { topic: "A review of fall coping", student: "Doulat" },
+            { topic: "FABG", student: "Ehtisham" },
+            { topic: "Learning Force Condition", student: "GR" },
+            { topic: "Deep learning Assisted", student: "Gulab" },
+            { topic: "Beyond Visual", student: "Hamza" },
+            { topic: "Tactile sensory for softness recognition", student: "Hassan" },
+            { topic: "Dexterous", student: "Humaira" },
+            { topic: "Advanced Morphological", student: "Iman Murad" },
+            { topic: "Self-Powered Single Multifunctional", student: "Inayat" },
+            { topic: "Tetrapods", student: "Israr" },
+            { topic: "Heptics feedback", student: "Jai prakash" },
+            { topic: "Adoptive Drift Compensation", student: "Javeria" },
+            { topic: "Aeroheptix", student: "Jeetash" },
+            { topic: "Bioinspired Passive Tactile Sensors", student: "Jethnand" },
+            { topic: "Innovation and Reconstruction", student: "Kainat" },
+            { topic: "Enhancing Robotics", student: "Kantash" },
+            { topic: "Development of and optical Technology", student: "Kousar" },
+            { topic: "Shared autonomy policy", student: "Labiba" },
+            { topic: "Risk Response", student: "Lal" },
+            { topic: "Human Following", student: "Malaika" },
+            { topic: "Unlocking Dynamic Subtle", student: "Minaam" },
+            { topic: "Franka Emika", student: "Mohib" }
+        ];
+
+        const tableBody = document.getElementById('paperTableBody');
+
+        papers.forEach(paper => {
+            const row = tableBody.insertRow();
+            const topicCell = row.insertCell();
+            const studentCell = row.insertCell();
+
+            const downloadLink = document.createElement('a');
+            downloadLink.href = `paper/${paper.student}.pdf`;
+            downloadLink.textContent = paper.topic;
+            downloadLink.download = `${paper.student}.pdf`; // Suggests the filename for download
+
+            topicCell.appendChild(downloadLink);
+            studentCell.textContent = paper.student;
+        });
+    </script>
+</body>
+</html>
